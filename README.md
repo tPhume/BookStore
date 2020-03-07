@@ -1,0 +1,2 @@
+# BookStore
+In-memory database project for a Book store, project for SDA class. Serializes data with memento pattern - serializes entire object to disk. Commands are appended to a log - allows for command replay.
