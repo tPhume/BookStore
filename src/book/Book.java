@@ -4,12 +4,12 @@ import inventory.Product;
 
 public class Book implements Product {
     // attributes of book class
-    private int id;
+    private Integer id;
     private String name;
     private double price;
     private int stock;
 
-    public Book(int id, String name, double price, int stock) {
+    public Book(Integer id, String name, double price, int stock) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -19,7 +19,7 @@ public class Book implements Product {
 
     // Getter and setter
     @Override
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

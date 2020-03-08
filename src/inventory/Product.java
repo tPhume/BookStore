@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public interface Product extends Serializable {
     // for id attribute
-    int getId();
+    Integer getId();
 
     // for name attribute
     String getName();

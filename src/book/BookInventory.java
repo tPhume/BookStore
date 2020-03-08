@@ -34,9 +34,9 @@ public class BookInventory implements Inventory, Originator {
     }
 
     @Override
-    public void add(int id, int num) {
+    public void add(Integer id, int num) {
         for (Book book : this.bookList) {
-            if (book.getId() == id) {
+            if (book.getId().equals(id)) {
                 book.setStock(book.getStock() + num);
 
                 return;
@@ -70,9 +70,9 @@ public class BookInventory implements Inventory, Originator {
     }
 
     @Override
-    public Product find(int id) {
+    public Product find(Integer id) {
         for (Book book : this.bookList) {
-            if (book.getId() == id) {
+            if (book.getId().equals(id)) {
                 return book;
             }
         }
@@ -92,9 +92,9 @@ public class BookInventory implements Inventory, Originator {
     }
 
     @Override
-    public void sell(int id, int num) {
+    public void sell(Integer id, int num) {
         for (Book book : this.bookList) {
-            if (book.getId() == id) {
+            if (book.getId().equals(id)) {
                 book.setStock(book.getStock() - num);
 
                 return;
@@ -114,9 +114,9 @@ public class BookInventory implements Inventory, Originator {
     }
 
     @Override
-    public void update(int id, int price) {
+    public void update(Integer id, int price) {
         for (Book book : this.bookList) {
-            if (book.getId() == id) {
+            if (book.getId().equals(id)) {
                 book.setPrice(price);
 
                 break;
