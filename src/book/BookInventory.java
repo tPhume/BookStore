@@ -59,7 +59,7 @@ public class BookInventory implements Inventory, Originator {
     public void create(Product prod) {
         // check for duplicate
         for (Book book : this.bookList) {
-            if (book.getId() == prod.getId() || book.getName().equals(prod.getName())) {
+            if (book.getId().equals(prod.getId()) || book.getName().equals(prod.getName())) {
                 return;
             }
         }
