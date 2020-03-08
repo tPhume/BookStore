@@ -3,7 +3,7 @@ package memento;
 import java.util.ArrayList;
 
 public class Caretaker {
-    ArrayList<Memento> history;
+    private ArrayList<Memento> history;
 
     public Caretaker() {
         history = new ArrayList<>();
