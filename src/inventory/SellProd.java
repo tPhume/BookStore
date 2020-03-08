@@ -2,7 +2,7 @@ package inventory;
 
 // Decrease stock of a product given id or name
 public interface SellProd {
-    boolean sell(int id, int num);
+    void sell(int id, int num);
 
-    boolean sell(String name, int num);
+    void sell(String name, int num);
 }

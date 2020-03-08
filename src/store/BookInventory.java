@@ -34,45 +34,39 @@ public class BookInventory implements Inventory, Originator {
     }
 
     @Override
-    public boolean add(int id, int num) {
+    public void add(int id, int num) {
         for (Book book : this.bookList) {
             if (book.getId() == id) {
                 book.setStock(book.getStock() + num);
 
-                return true;
+                return;
             }
         }
-
-        return false;
     }
 
     @Override
-    public boolean add(String name, int num) {
+    public void add(String name, int num) {
         for (Book book : this.bookList) {
             if (book.getName().equals(name)) {
                 book.setStock(book.getStock() + num);
 
-                return true;
+                return;
             }
         }
-
-        return false;
     }
 
     @Override
-    public boolean create(Product prod) {
+    public void create(Product prod) {
         // check for duplicate
         for (Book book : this.bookList) {
             if (book.getId() == prod.getId() || book.getName().equals(prod.getName())) {
-                return false;
+                return;
             }
         }
 
         // type cast then add to our list
         Book book = (Book) prod;
         this.bookList.add(book);
-
-        return true;
     }
 
     @Override
@@ -98,54 +92,46 @@ public class BookInventory implements Inventory, Originator {
     }
 
     @Override
-    public boolean sell(int id, int num) {
+    public void sell(int id, int num) {
         for (Book book : this.bookList) {
             if (book.getId() == id) {
                 book.setStock(book.getStock() - num);
 
-                return true;
+                return;
             }
         }
-
-        return false;
     }
 
     @Override
-    public boolean sell(String name, int num) {
+    public void sell(String name, int num) {
         for (Book book : this.bookList) {
             if (book.getName().equals(name)) {
                 book.setStock(book.getStock() - num);
 
-                return true;
+                return;
             }
         }
-
-        return false;
     }
 
     @Override
-    public boolean update(int id, int price) {
+    public void update(int id, int price) {
         for (Book book : this.bookList) {
             if (book.getId() == id) {
                 book.setPrice(price);
 
-                return true;
+                break;
             }
         }
-
-        return false;
     }
 
     @Override
-    public boolean update(String name, int price) {
+    public void update(String name, int price) {
         for (Book book : this.bookList) {
             if (book.getName().equals(name)) {
                 book.setPrice(price);
 
-                return true;
+                return;
             }
         }
-
-        return false;
     }
 }
