@@ -1,7 +1,10 @@
 package memento;
 
+import inventory.Product;
+
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public interface Memento extends Serializable {
-    boolean restore();
+    ArrayList<Product> getState();
 }

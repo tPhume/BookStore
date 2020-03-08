@@ -3,14 +3,34 @@ package store;
 import inventory.Inventory;
 import inventory.Product;
 
+import memento.Memento;
+import memento.Originator;
+
 import java.util.ArrayList;
 
 
-public class BookInventory implements Inventory {
+public class BookInventory implements Inventory, Originator {
     private ArrayList<Book> bookList;
 
     public BookInventory() {
         this.bookList = new ArrayList<>();
+    }
+
+    @Override
+    public BookInventoryMemento save() {
+        return new BookInventoryMemento(this.bookList);
+    }
+
+    @Override
+    public void restore(Memento memento) {
+        ArrayList<Book> newBookList = new ArrayList<>();
+        ArrayList<Product> state = memento.getState();
+
+        for (Product prod : state) {
+            newBookList.add((Book) prod);
+        }
+
+        this.bookList = newBookList;
     }
 
     @Override
