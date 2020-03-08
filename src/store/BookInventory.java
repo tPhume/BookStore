@@ -9,6 +9,10 @@ import java.util.ArrayList;
 public class BookInventory implements Inventory {
     private ArrayList<Book> bookList;
 
+    public BookInventory() {
+        this.bookList = new ArrayList<>();
+    }
+
     @Override
     public boolean add(int id, int num) {
         for (Book book : this.bookList) {
