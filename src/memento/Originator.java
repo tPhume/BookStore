@@ -1,5 +1,5 @@
 package memento;
 
 public interface Originator {
-    boolean save();
+    Memento save();
 }

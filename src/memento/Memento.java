@@ -1,5 +1,7 @@
 package memento;
 
-public interface Memento {
+import java.io.Serializable;
+
+public interface Memento extends Serializable {
     boolean restore();
 }
