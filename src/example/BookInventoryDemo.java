@@ -1,6 +1,7 @@
 package example;
 
 import inventory.Product;
+import memento.Memento;
 import store.*;
 
 public class BookInventoryDemo {
@@ -12,7 +13,7 @@ public class BookInventoryDemo {
         inventory.create(animalBook);
 
 
-        BookInventoryMemento memento = inventory.save();
+        Memento memento = inventory.save();
 
         // add another book
         Book insectBook = new Book(2, "Insect Book", 30, 1);

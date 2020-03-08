@@ -17,16 +17,16 @@ public class BookInventory implements Inventory, Originator {
     }
 
     @Override
-    public BookInventoryMemento save() {
-        return new BookInventoryMemento(this.bookList);
+    public Memento save() {
+        return new Memento(this.bookList);
     }
 
     @Override
     public void restore(Memento memento) {
         ArrayList<Book> newBookList = new ArrayList<>();
-        ArrayList<Product> state = memento.getState();
+        ArrayList<Object> state = memento.getState();
 
-        for (Product prod : state) {
+        for (Object prod : state) {
             newBookList.add((Book) prod);
         }
 

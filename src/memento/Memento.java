@@ -1,10 +1,18 @@
 package memento;
 
-import inventory.Product;
+import store.Book;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public interface Memento extends Serializable {
-    ArrayList<Product> getState();
+public class Memento implements Serializable {
+    private ArrayList<Object> state;
+
+    public Memento(ArrayList<Book> state) {
+        this.state = new ArrayList<>(state);
+    }
+
+    public ArrayList<Object> getState() {
+        return new ArrayList<>(state);
+    }
 }
