@@ -7,10 +7,7 @@ import memento.Caretaker;
 import memento.Memento;
 import memento.Originator;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInput;
-import java.io.ObjectInputStream;
+import java.io.*;
 import java.util.ArrayList;
 
 // wrap over the BookInventory class
@@ -82,6 +79,15 @@ public class BookDecorator implements Inventory, Originator {
         Memento memento = inventory.save();
         caretaker.add(memento);
 
+        // this will clear our command file
+        try {
+            PrintWriter writer = new PrintWriter(this.commandFile);
+            writer.print("");
+            writer.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         return memento;
     }
 
@@ -97,7 +103,9 @@ public class BookDecorator implements Inventory, Originator {
         ArrayList<Memento> history = caretaker.getHistory();
 
         // restore using last memento
-        inventory.restore(history.get(history.size() - 1));
+        if (history.size() > 0) {
+            inventory.restore(history.get(history.size() - 1));
+        }
 
         // replay commands
         try {
