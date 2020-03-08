@@ -1,20 +1,20 @@
-package store;
+package book;
 
 import command.InventoryCommand;
 import inventory.Inventory;
 
-public class BookSellCommand implements InventoryCommand {
+public class BookAddCommand implements InventoryCommand {
     private int id;
     private String name;
     private int num;
 
-    public BookSellCommand(int id, int num) {
+    public BookAddCommand(int id, int num) {
         this.id = id;
         this.num = num;
         this.name = null;
     }
 
-    public BookSellCommand(String name, int num) {
+    public BookAddCommand(String name, int num) {
         this.id = -1;
         this.num = num;
         this.name = name;
@@ -23,9 +23,9 @@ public class BookSellCommand implements InventoryCommand {
     @Override
     public void execute(Inventory inventory) {
         if (this.id != -1) {
-            inventory.sell(this.id, this.num);
+            inventory.add(this.id, this.num);
         } else {
-            inventory.sell(this.name, this.num);
+            inventory.add(this.name, num);
         }
     }
 }

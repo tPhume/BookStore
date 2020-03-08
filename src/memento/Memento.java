@@ -1,6 +1,6 @@
 package memento;
 
-import store.Book;
+import book.Book;
 
 import java.io.Serializable;
 import java.util.ArrayList;

@@ -2,7 +2,7 @@ package example;
 
 import inventory.Product;
 import memento.Caretaker;
-import store.*;
+import book.*;
 
 public class BookInventoryDemo {
     public static void main(String[] args) {

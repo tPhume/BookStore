@@ -1,4 +1,4 @@
-package store;
+package book;
 
 import command.InventoryCommand;
 import inventory.Inventory;

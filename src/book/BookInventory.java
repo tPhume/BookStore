@@ -1,4 +1,4 @@
-package store;
+package book;
 
 import inventory.Inventory;
 import inventory.Product;
