@@ -1,6 +1,8 @@
 package inventory;
 
-public interface Product {
+import java.io.Serializable;
+
+public interface Product extends Serializable {
     // for id attribute
     int getId();
 
